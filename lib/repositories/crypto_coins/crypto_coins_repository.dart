@@ -3,8 +3,8 @@ import 'package:dio/dio.dart';
 
 class CryptoCoinsRepository implements AbstractCoinsRepository {
   CryptoCoinsRepository({
-   required this.dio
-});
+    required this.dio
+  });
 
   final Dio dio;
 
@@ -18,14 +18,14 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
 
     final cryptoCoinList = dataRaw.entries
         .map((e) {
-          final usdData = (e.value as Map<String, dynamic>)['USD'] as Map<String, dynamic>;
-          final price = usdData['PRICE'];
-          final imageUrl = usdData['IMAGEURL'];
-          return CryptoCoin(
-        name: e.key,
-        priceInUSD: price,
-        imageUrl: 'https://www.cryptocompare.com/$imageUrl'
-    );}).toList();
+      final usdData = (e.value as Map<String, dynamic>)['USD'] as Map<String, dynamic>;
+      final price = usdData['PRICE'];
+      final imageUrl = usdData['IMAGEURL'];
+      return CryptoCoin(
+          name: e.key,
+          priceInUSD: price,
+          imageUrl: 'https://www.cryptocompare.com/$imageUrl'
+      );}).toList();
 
     return cryptoCoinList;
   }

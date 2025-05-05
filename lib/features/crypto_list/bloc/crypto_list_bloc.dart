@@ -4,6 +4,8 @@ import 'package:crypto_coins_list/repositories/crypto_coins/abstract_coins_repos
 import 'package:crypto_coins_list/repositories/crypto_coins/models/crypto_coin.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 part 'crypto_list_event.dart';
 part 'crypto_list_state.dart';
@@ -19,8 +21,9 @@ class CryptoListBloc
 
         final coinsList = await coinsRepository.getCoinsList();
         emit(CryptoListLoaded(coinsList: coinsList));
-      } catch (e) {
+      } catch (e, st) {
         emit(CryptoListLoadingFailure(exception: e));
+        GetIt.I<Talker>().handle(e,st);
       }
       finally {
         event.completer?.complete();
