@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:crypto_coins_list/features/crypto_list/widgets/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 class CryptoListScreen extends StatefulWidget {
   const CryptoListScreen({super.key});
@@ -33,6 +34,19 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
         backgroundColor: theme.appBarTheme.backgroundColor,
         title: const Text('CryptoCurrenciesList'),
         centerTitle: true,
+        actions: [
+          IconButton(onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => TalkerScreen(
+                  talker: GetIt.I<Talker>(),
+                ),
+              ),
+            );
+          }, icon: Icon(
+              Icons.document_scanner_outlined),
+          )
+        ],
       ),
       body: RefreshIndicator(
           child: BlocBuilder<CryptoListBloc, CryptoListState>(

@@ -31,5 +31,6 @@ class CryptoListBloc
     });
   }
 
+
   final AbstractCoinsRepository coinsRepository;
 }
