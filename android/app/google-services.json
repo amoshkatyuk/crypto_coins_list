@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077460159645",
+    "project_id": "crypto-list-app-10f22",
+    "storage_bucket": "crypto-list-app-10f22.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077460159645:android:aad735fca7d1f4d08cd874",
+        "android_client_info": {
+          "package_name": "com.moshkatyuk.crypto_coins_list"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTCE3SnVQefbtrlHqyu1sd5puJpTW5eKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
